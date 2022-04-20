@@ -50,19 +50,6 @@ public class SaludosEndPoint
 
     @PayloadRoot(localPart = "ModificarSaludoRequest", namespace = "https://t4is.uv.mx/saludos")
     @ResponsePayload
-    public BuscarSaludosResponse modificarSaludo()
-    {
-        BuscarSaludosResponse respuesta = new BuscarSaludosResponse();
-        Iterable <Saludadores> listaSaludos = isaludadores.findAll();
-        for (Saludadores saludo : listaSaludos) 
-        {
-            respuesta.getSaludos().add(saludo);
-        }
-        return respuesta;
-    }
-
-    @PayloadRoot(localPart = "ModificarSaludoRequest", namespace = "https://t4is.uv.mx/saludos")
-    @ResponsePayload
     public ModificarSaludoResponse modificarSaludo(@RequestPayload ModificarSaludoRequest peticion)
     {
         ModificarSaludoResponse respuesta = new ModificarSaludoResponse();
